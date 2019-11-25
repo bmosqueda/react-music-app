@@ -1,4 +1,4 @@
-const URL = 'https://mobile-app-ucol.herokuapp.com/';
+const URL = 'https://mobile-api-ucol.herokuapp.com/';
 
 function getToken(email, password) {
     return fetch(
@@ -14,11 +14,11 @@ function getToken(email, password) {
                 password: password,
             }),
         }
-        .then(respone => response.json())
-        .then(data => {
-            return data;
-        })
-    );
+    )
+    .then(response => response.json())
+    .then(data => {
+        return data;
+    })
 }
 
 function getMusicData() {
@@ -33,7 +33,7 @@ function getMusicData() {
             body: JSON.stringify({
                 token: global.token
             }),
-        }
+        })
         .then(response => response.json())
         .then(data => data.topartists.artist)
         .then(artists => artists.map(artist => {
@@ -45,7 +45,6 @@ function getMusicData() {
                 comments: 140,
             }
         }))
-    )
 }
 
 export { getToken, getMusicData }

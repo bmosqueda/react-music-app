@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
         elevation: 2
     },
     image: {
-        widht: 150,
+        width: 150,
         height: 150
     },
     info: {
